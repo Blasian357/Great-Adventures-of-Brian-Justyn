@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title></title>
+  </head>
+  <body>
+  <script>
+	/** 
+	 * Name:
+	 * Project: 3-1 Stock Transactions
+	 * SAMPLE with bugs!!
+	 *
+	 * This application:
+	 *  - collects number of stock in transaction,
+     *  - calculates Stock total transaction prices
+	 *  - and commissions @ 2% (fixed).
+	*/
+	 //Input variable used
+	var commissions = 0.02;	//insert broker commissions
+	var getStocks = 0;
+	var getPrice = 0;
+	var question = "question text";
+	var stockTransaction = 0;
+	var transactionCommissions = 0;
+	var inputDecision = "NA";
+
+	//Processing Modules used
+	function getStockNumber(question="How many Stocks? "){
+	  getStocks = prompt(question);
+	}
+
+	function getPriceAmount(question="At what price? "){
+	  getPrice = prompt(question);
+	}
+
+	function calculateTransaction(){
+	  stockTransaction = getStocks * getPrice;
+	  console.log(stockTransaction);
+	}
+
+	function calculateCommissions(){
+	  transactionCommissions = (getStocks * getPrice) * commissions;
+	  console.log(transactionCommissions);
+	}
+
+	//Output results to an alert
+	inputDecision = prompt("Let's start:\n 1)Buying Stocks or \n 2)Selling Stocks or \n q)Quit","q");
+
+	if(inputDecision =="1"){
+	   //process for buying stocks
+	   getStockNumber();
+	   getPriceAmount();
+	   alert("Purchase: "+getStocks+" for $"+getPrice+" \n Total transaction: $"+stockTransaction+"\n Total commissions paid: $"+transactionCommissions+"\n");
+	}else{
+		// process for selling stocks
+		getStockNumber();
+		getPriceAmount();
+		alert("Sold: "+getStocks+" for $"+getPrice+" \n Total transaction: $"+stockTransaction+"\n Total commissions paid: $"+transactionCommissions+"\n");
+}</script>
+</body>
+</html>
